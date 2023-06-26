@@ -1,0 +1,6 @@
+
+- name: Set etc_prefix
+  set_fact:
+    etc_prefix: /usr/local
+  when: ansible_os_family == "FreeBSD"
+
