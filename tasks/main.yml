@@ -1,6 +1,7 @@
 
 - name: Set Debian defaults
   set_fact:
+    etc_prefix: ""
     cron_daily: /etc/cron.daily/
   when: ansible_os_family == "Debian"
 
