@@ -8,6 +8,6 @@
 - name: Set FreeBSD default
   set_fact:
     etc_prefix: /usr/local
-    cron_daily: /usr/local/etc/periodic/daily
+    cron_daily: /usr/local/etc/periodic/daily/
   when: ansible_os_family == "FreeBSD"
 
