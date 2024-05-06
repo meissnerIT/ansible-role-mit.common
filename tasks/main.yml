@@ -1,13 +1,15 @@
 
 - name: Set Debian defaults
   set_fact:
-    etc_prefix: ""
     cron_daily: /etc/cron.daily/
+    etc_prefix: ""
+    install_prefix: /opt
   when: ansible_os_family == "Debian"
 
 - name: Set FreeBSD default
   set_fact:
-    etc_prefix: /usr/local
     cron_daily: /usr/local/etc/periodic/daily/
+    etc_prefix: /usr/local
+    install_prefix: /usr/local
   when: ansible_os_family == "FreeBSD"
 
