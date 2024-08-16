@@ -1,6 +1,6 @@
 # mit.common
 
-Sets global variables like ETC_PREFIX.
+Sets global variables like `etc_prefix`.
 
 Usage: In `meta/main.yml` add:
 
