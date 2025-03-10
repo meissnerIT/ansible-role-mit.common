@@ -2,6 +2,8 @@
 - name: Set Debian defaults
   ansible.builtin.set_fact:
     cron_daily: /etc/cron.daily/
+    # bash supports pipefail option, sh on Debian not.
+    default_shell: /bin/bash
     etc_prefix: ""
     install_prefix: /opt
   when: ansible_os_family == "Debian"
@@ -9,6 +11,8 @@
 - name: Set FreeBSD default
   ansible.builtin.set_fact:
     cron_daily: /usr/local/etc/periodic/daily/
+    # sh from FreeBSD supports pipefail option
+    default_shell: /bin/sh
     etc_prefix: /usr/local
     install_prefix: /usr/local
   when: ansible_os_family == "FreeBSD"
