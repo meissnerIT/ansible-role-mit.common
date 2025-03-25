@@ -21,3 +21,8 @@
   ansible.builtin.set_fact:
     etc_prefix: ""
   when: ansible_os_family == "OpenBSD"
+
+- name: Set Debian defaults
+  ansible.builtin.set_fact:
+    etc_prefix: ""
+  when: ansible_os_family == "RedHat"
