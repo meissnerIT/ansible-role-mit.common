@@ -1,4 +1,5 @@
 ---
+# Currently no other defaults needed for "OpenBSD" or "RedHat"
 - name: Set defaults
   ansible.builtin.set_fact:
     etc_prefix: ""
