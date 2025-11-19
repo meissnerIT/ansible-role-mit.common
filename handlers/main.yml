@@ -1,0 +1,23 @@
+---
+
+- name: Test sshd configuration
+  ansible.builtin.command: sshd -t
+  changed_when: true
+  register: sshd_configtest
+  listen:
+    - Reload sshd
+    - Restart sshd
+
+- name: Reload sshd
+  ansible.builtin.service:
+    name: sshd
+    state: reloaded
+  when: sshd_configtest.rc == 0
+  listen: Reload sshd
+
+- name: Restart sshd
+  ansible.builtin.service:
+    name: sshd
+    state: restarted
+  when: sshd_configtest.rc == 0
+  listen: Restart sshd
